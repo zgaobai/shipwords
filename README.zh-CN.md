@@ -2,29 +2,30 @@
 
 <a href="https://shipwords.dev/zh/"><img src="apps/www/public/img/og-zh.jpg" alt="shipwords：一个关键词，一个站。" width="100%"></a>
 
-**一个关键词，一个站，上线当天就能收钱。**
+**新词站群的开源框架：一个下午上一个站，上线当天就能收钱。**
 
 [![CI](https://github.com/shipwords-dev/shipwords/actions/workflows/ci.yml/badge.svg)](https://github.com/shipwords-dev/shipwords/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Cloudflare Workers](https://img.shields.io/badge/Cloudflare-Workers-F38020?logo=cloudflare&logoColor=white)](https://workers.cloudflare.com/)
 [![TanStack Start](https://img.shields.io/badge/TanStack-Start-FF4154?logo=reactquery&logoColor=white)](https://tanstack.com/start)
 [![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![GitHub stars](https://img.shields.io/github/stars/shipwords-dev/shipwords?style=flat&logo=github)](https://github.com/shipwords-dev/shipwords/stargazers)
 
 [English](README.md) · **中文**
 
 </div>
 
-shipwords 是一套免费、MIT 开源的代码，用来在 Cloudflare 上同时运营很多个 AI 图像和视频站，一个关键词一个站。账户、支付、积分和 AI 生成只写一次，所有站共用；每个站有自己的页面、外观和域名。官网：[shipwords.dev](https://shipwords.dev/zh/)。
+shipwords 是一套免费、MIT 开源的新词站群框架，用来在 Cloudflare 上同时运营很多个 AI 图像和视频站，一个新词一个站。不变的共享：账户、支付、积分和 AI 生成只写一次，所有站共用。变的独立：每个站有自己的页面、外观和域名。官网：[shipwords.dev](https://shipwords.dev/zh/)。
 
 ## 为什么用 shipwords
 
-**为新词站群而生。** 每个新词上一个站，没跑出来的放着不管，跑出来的继续迭代。公共核心有 bug，修一处，所有站下次部署就能更新。每个站单独部署，有自己的数据库、文件存储和收款账户，上线或下线一个站都不影响其他站。
+**为新词站群而生。** 每个新词上一个站，起量的继续迭代，没起来的放着不管。公共核心有 bug，修一处，所有站下次部署就能更新。每个站单独部署，有自己的数据库、文件存储和收款账户，上线或下线一个站都不影响其他站。
 
-**内置成熟的 AI 能力。** [tinydeskai.io](https://tinydeskai.io/) 就是用 shipwords 做的，完整源码在 [`sites/tinydeskai-example`](sites/tinydeskai-example)，fork 过来就能用。
+**内置成熟的 AI 能力。** [tinydeskai.io](https://tinydeskai.io/) 就是用 shipwords 做的，完整源码在 [`sites/tinydeskai-example`](sites/tinydeskai-example)，可以 fork 来做你自己的词。
 
-- **视频模板**：把一条爆款视频做成模板，访客上传照片，就能拿到同款视频。Tiny Desk 是第一个。
-- **成熟的换脸**：自动换上原角色的服装，口型跟着原曲走，脸没换上的镜头会自动重做。
-- **主流模型，内置可用**：GPT Image、Nano Banana、Seedream、FLUX、Seedance、Veo、Kling、Wan 等，开箱即用。
+- **视频模板**：把一条爆款视频做成模板，访客上传照片，就能拿到同款视频。Tiny Desk AI 就是这样做的。
+- **成熟的换脸**：整段视频一次换完。每张上传的照片替换一位表演者，脸、发型和衣服都换上，口型仍然跟着节拍。原来的脸还在的话，任务判为失败，积分退回。
+- **主流模型，内置可用**：GPT Image、Nano Banana、Seedream、FLUX、Seedance、Veo、Kling、Wan 等，填一个 Yir API key 就能用，按次付费。
 
 **开箱就能收钱。** 每个站都自带：
 
@@ -38,6 +39,8 @@ shipwords 是一套免费、MIT 开源的代码，用来在 Cloudflare 上同时
 收钱的代码所有站共用，并有测试覆盖：重复扣款、重复或乱序的支付通知、失败任务的退款都测过。
 
 ## 让编程 Agent 帮你建站
+
+还没想好做哪个词？[new-term-radar](https://github.com/zhuyansen/new-term-radar)（第三方开源项目）每天从 X、Hugging Face、GitHub 和 sitemap 里抓刚冒头的 AI 新词，比关键词工具早。
 
 把下面这句换成你的关键词，粘贴到 Claude Code、Codex 或 Cursor：
 
@@ -105,7 +108,7 @@ Agent 会克隆仓库、生成站点并在本地跑起来。它遵守的规则�
 | `packages/jobs`            | 基于 Workflows 的生成任务运行时：单向任务状态机、自动退款、上游适配接口、Yir 适配（`@yir-ai/sdk`）、本地开发用的模拟上游、可选的 ffmpeg 拼接容器                        |
 | `templates/ai-site`        | 一个完整可用的 AI 图像站，由 `pnpm new-site` 复制：首页、定价、账户、登录、政策页、`sitemap.xml`、`robots.txt`、`llms.txt`                                              |
 | `sites/<site>`             | 你的站，一个关键词一个，各自单独部署                                                                                                                                    |
-| `sites/tinydeskai-example` | tinydeskai.io 的完整源码（视频特效：照片槽位、多镜头渲染、ffmpeg 拼接、内容页）                                                                                         |
+| `sites/tinydeskai-example` | tinydeskai.io 的完整源码（视频特效：照片槽位、整段一次编辑、结果检查、ffmpeg 拼接、内容页）                                                                             |
 | `apps/<sidecar>`           | 可选的小型 Worker，不属于任何单个站                                                                                                                                     |
 | `tools/`                   | `new-site` 脚手架、`check-site` 上线检查、`list-sites`、worktree 初始化、dev 端口、Stripe webhook 转发（只用 Node 内置模块，带测试）                                    |
 | `docs/`                    | 架构、本地开发、上线手册（英文）                                                                                                                                        |
@@ -132,6 +135,10 @@ pnpm lint && pnpm test:tools
 - [上线手册](docs/site-launch.md)
 - [AI 编程 Agent 规则](AGENTS.md)
 - [贡献指南](CONTRIBUTING.md) 与 [安全政策](SECURITY.md)
+
+## 社区
+
+提问、想法和你上线的站，发到 [GitHub Discussions](https://github.com/shipwords-dev/shipwords/discussions)：[Q&A](https://github.com/shipwords-dev/shipwords/discussions/categories/q-a)、[Show and tell](https://github.com/shipwords-dev/shipwords/discussions/categories/show-and-tell)、[Ideas](https://github.com/shipwords-dev/shipwords/discussions/categories/ideas)。Bug 请提 [Issues](https://github.com/shipwords-dev/shipwords/issues)。
 
 ## 许可
 

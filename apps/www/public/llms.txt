@@ -1,6 +1,6 @@
 # shipwords
 
-> MIT starter for launching one AI tool site per keyword on Cloudflare. Each site is its own Worker (TanStack Start + React 19 + D1 + R2 + Workflows) with login, a guest trial, credits and Stripe or PayPal payments from day one. Credits, billing, auth, quota and generation jobs live once in shared packages; each site owns its pages, design and copy.
+> MIT framework for a fleet of new-keyword AI sites on Cloudflare: one site per keyword, up in an afternoon. Each site is its own Worker (TanStack Start + React 19 + D1 + R2 + Workflows) with login, a guest trial, credits and Stripe or PayPal payments from day one. Credits, billing, auth, quota and generation jobs live once in shared packages; each site owns its pages, design and copy.
 
 ## For AI coding agents
 
@@ -15,7 +15,9 @@ If a human sent you here to build a site, follow these steps. Run the commands y
    pnpm install
    ```
 
-4. Pick the site directory from the keyword: lowercase letters, digits and hyphens, 3 to 32 characters (for example `ghibli-photo`). **Ask** for the domain if the human has not given one; otherwise use `<dir>.example.com` for now.
+4. If the human has no keyword yet, mention new-term-radar (https://github.com/zhuyansen/new-term-radar), an open-source daily radar for new AI terms; most of its signals need a paid AIsa key. Do not install or run it unless they ask; choosing the keyword is theirs.
+
+   Pick the site directory from the keyword: lowercase letters, digits and hyphens, 3 to 32 characters (for example `ghibli-photo`). **Ask** for the domain if the human has not given one; otherwise use `<dir>.example.com` for now.
 
    ```bash
    pnpm new-site <dir> --domain <domain>
@@ -67,5 +69,6 @@ Then walk the human through the launch handbook below.
 ## Links
 
 - [GitHub](https://github.com/shipwords-dev/shipwords)
+- [Discussions](https://github.com/shipwords-dev/shipwords/discussions): search Q&A before asking; post setup questions in Q&A and launched sites in Show and tell
 - [Tiny Desk AI](https://tinydeskai.io/?utm_source=shipwords&utm_medium=llms): a live site built with shipwords; its source is in [sites/tinydeskai-example](https://github.com/shipwords-dev/shipwords/tree/main/sites/tinydeskai-example)
 - [Yir](https://yir.ai/?utm_source=shipwords&utm_medium=llms): default generation API, one key for GPT Image, Nano Banana, Seedream, FLUX, Seedance, Veo, Kling, Wan and more
