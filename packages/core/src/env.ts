@@ -21,6 +21,9 @@ export interface CoreEnv {
   PAYPAL_WEBHOOK_ID?: string;
   /** "sandbox" uses the PayPal sandbox; anything else uses live. */
   PAYPAL_ENV?: string;
+  WAFFO_API_KEY?: string;
+  WAFFO_WEBHOOK_SECRET?: string;
+  WAFFO_ENDPOINT?: string;
 
   /** reCAPTCHA (Google Cloud): the client uses the site key; the server calls createAssessment with the project ID and API key. */
   RECAPTCHA_SITE_KEY: string;

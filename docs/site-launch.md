@@ -43,7 +43,7 @@ Write each secret with `pnpm wrangler secret put <NAME>`; names are in `.dev.var
 
 ## 5. Payments (confirm)
 
-Each site picks one provider in `site.config.ts` under `billing.provider`: `stripe` or `paypal`. Configure only that provider's secrets. Use a separate payment account per site where possible.
+Each site picks one provider in `site.config.ts` under `billing.provider`: `stripe`, `paypal`, or `waffo`. Configure only that provider's secrets. Use a separate payment account per site where possible.
 
 ### Stripe
 

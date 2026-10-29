@@ -24,7 +24,7 @@ shipwords is a monorepo for running one AI tool site per keyword. All sites shar
 | Rate limits      | Guest daily quota and site budget in D1 with conditional writes      | KV is eventually consistent and not suitable for exact counters                                              |
 | Device identity  | IP (IPv6 grouped by /64) plus a signed device cookie                 |                                                                                                              |
 | Disposable email | Built-in blocklist                                                   | Sign-up bonus requires a verified, non-disposable email                                                      |
-| Payments         | Stripe (default) or PayPal, behind one provider interface            | See section 5                                                                                                |
+| Payments         | Stripe (default), PayPal, or Waffo (MoR), behind one provider interface | See section 5                                                                                                |
 | Job runtime      | Cloudflare Workflows                                                 | See section 6                                                                                                |
 | Storage          | R2 binding                                                           | Outputs served through the site                                                                              |
 | i18n             | Paraglide                                                            | Production builds ship English only                                                                          |

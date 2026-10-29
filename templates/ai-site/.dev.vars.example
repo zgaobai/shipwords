@@ -13,6 +13,10 @@ PAYPAL_ENV=sandbox
 PAYPAL_CLIENT_ID=
 PAYPAL_CLIENT_SECRET=
 PAYPAL_WEBHOOK_ID=
+# For Waffo (Waffo Pancake / Waffo Checkout) fill this group and leave others empty.
+WAFFO_API_KEY=
+WAFFO_WEBHOOK_SECRET=
+WAFFO_ENDPOINT=https://api.waffo.com
 RECAPTCHA_SITE_KEY=
 RECAPTCHA_PROJECT_ID=
 RECAPTCHA_API_KEY=

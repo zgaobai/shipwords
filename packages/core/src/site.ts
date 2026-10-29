@@ -63,7 +63,12 @@ export interface SiteConfig {
         /** Enable Stripe Tax automatic tax calculation; configure it in the Stripe dashboard first. */
         automaticTax: boolean;
       }
-    | { provider: 'paypal' };
+    | { provider: 'paypal' }
+    | {
+        provider: 'waffo';
+        /** Optional custom API endpoint (defaults to https://api.waffo.com). */
+        endpoint?: string;
+      };
   analytics?: {
     ga4?: string;
     clarity?: string;

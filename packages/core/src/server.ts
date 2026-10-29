@@ -14,6 +14,7 @@ import {
 import { PayPalProvider } from './billing/paypal';
 import type { PaymentProvider } from './billing/provider';
 import { StripeProvider } from './billing/stripe';
+import { WaffoProvider } from './billing/waffo';
 import { getBalance } from './credits/ledger';
 import { createDb, type Db } from './db/client';
 import type { CoreEnv } from './env';
@@ -44,6 +45,13 @@ function createProvider(site: SiteConfig, env: CoreEnv): PaymentProvider {
       webhookId: env.PAYPAL_WEBHOOK_ID ?? '',
       sandbox: env.PAYPAL_ENV === 'sandbox',
       products: site.products,
+    });
+  }
+  if (site.billing.provider === 'waffo') {
+    return new WaffoProvider({
+      apiKey: required(env, 'WAFFO_API_KEY'),
+      webhookSecret: required(env, 'WAFFO_WEBHOOK_SECRET'),
+      endpoint: site.billing.endpoint ?? env.WAFFO_ENDPOINT,
     });
   }
   return new StripeProvider({
