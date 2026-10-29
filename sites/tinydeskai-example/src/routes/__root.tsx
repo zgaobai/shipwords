@@ -7,6 +7,7 @@ import { getPublicConfig } from '~/lib/public-config';
 import { m } from '~/paraglide/messages.js';
 import { getLocale, setLocale } from '~/paraglide/runtime.js';
 import { AccountDialog, AccountLink } from '~/site/account';
+import { AiCitationsCard } from '~/site/ai-citations';
 import { GUIDES } from '~/site/guide';
 import { SUPPORT_EMAIL } from '~/site/legal';
 import { PricingDialog, PricingLink } from '~/site/pricing';
@@ -131,6 +132,7 @@ function Layout() {
       <main>
         <Outlet />
       </main>
+      <AiCitationsCard />
       <footer className="site-footer">
         <span>{m.common_footer_notice({ year: new Date().getFullYear(), name: site.name })}</span>
         <nav>

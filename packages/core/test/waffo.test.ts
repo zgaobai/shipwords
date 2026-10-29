@@ -79,7 +79,7 @@ describe('Waffo signature verification', () => {
     const verified = await verifyWaffoSignature(body, hexSignature, secret);
     expect(verified).toBe(true);
 
-    const tampered = await verifyWaffoSignature(body + ' ', hexSignature, secret);
+    const tampered = await verifyWaffoSignature(`${body} `, hexSignature, secret);
     expect(tampered).toBe(false);
   });
 });

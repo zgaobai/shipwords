@@ -1,4 +1,3 @@
-import type { Product } from '../site';
 import type {
   CheckoutFact,
   CheckoutRequest,

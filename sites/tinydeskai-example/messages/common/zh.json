@@ -186,5 +186,9 @@
   "common_phone_sending": "正在传…",
   "common_phone_sent": "已传 {count} 张 · 去电脑上看",
   "common_phone_failed": "有一张没传上，再选一次。",
-  "common_phone_expired": "链接过期了，在电脑上换个新二维码再扫。"
+  "common_phone_expired": "链接过期了，在电脑上换个新二维码再扫。",
+  "common_geo_doc_tag": "AI 与 Agent 文档",
+  "common_geo_doc_llms": "LLMS.TXT",
+  "common_geo_doc_desc": "看看 ChatGPT、Claude、Perplexity、Gemini 和 Grok 怎么介绍 {name}。",
+  "common_geo_prompt": "介绍一下 {name} ({url})，根据 {url}/llms.txt 总结它的功能、价格和使用方式。"
 }

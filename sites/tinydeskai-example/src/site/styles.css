@@ -1747,3 +1747,75 @@ button:disabled {
 .tool .results-more {
   margin: 0.75rem 0 0;
 }
+
+/* AI Citation GEO Card */
+.ai-citations-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  margin: 4rem auto 0;
+  padding: 1.25rem 1.5rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--color-line);
+  border-radius: 1rem;
+  box-sizing: border-box;
+  width: 100%;
+}
+.ai-citations-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+.ai-citations-tag {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  margin: 0;
+}
+.ai-citations-llms-link {
+  color: var(--color-amber, #d97757);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.ai-citations-llms-link:hover {
+  filter: brightness(1.2);
+}
+.ai-citations-desc {
+  font-size: 0.95rem;
+  color: var(--color-cream);
+  margin: 0;
+}
+.ai-citations-links {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+.ai-citation-btn {
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--color-line);
+  border-radius: 0.625rem;
+  color: var(--color-cream);
+  text-decoration: none;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.ai-citation-btn:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+@media (max-width: 640px) {
+  .ai-citations-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

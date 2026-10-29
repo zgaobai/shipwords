@@ -84,5 +84,9 @@
   "common_account_status_disputed": "拒付处理中",
   "common_account_status_charged_back": "已拒付",
   "common_account_no_orders": "还没有订单。",
-  "common_account_sign_out": "退出登录"
+  "common_account_sign_out": "退出登录",
+  "common_geo_doc_tag": "AI 与 Agent 文档",
+  "common_geo_doc_llms": "LLMS.TXT",
+  "common_geo_doc_desc": "看看 ChatGPT、Claude、Perplexity、Gemini 和 Grok 怎么介绍 {name}。",
+  "common_geo_prompt": "介绍一下 {name} ({url})，根据 {url}/llms.txt 总结它的功能、价格和使用方式。"
 }

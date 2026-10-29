@@ -186,5 +186,9 @@
   "common_phone_sending": "Sending…",
   "common_phone_sent": "{count} sent · check your computer",
   "common_phone_failed": "A photo didn't make it. Pick it again.",
-  "common_phone_expired": "This link expired. Get a new code on your computer and scan again."
+  "common_phone_expired": "This link expired. Get a new code on your computer and scan again.",
+  "common_geo_doc_tag": "AI & Agent Docs",
+  "common_geo_doc_llms": "LLMS.TXT",
+  "common_geo_doc_desc": "See how ChatGPT, Claude, Perplexity, Gemini and Grok explain {name}.",
+  "common_geo_prompt": "What is {name} ({url})? Summarize its features, pricing, and how it works based on {url}/llms.txt."
 }

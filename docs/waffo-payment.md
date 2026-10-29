@@ -59,11 +59,11 @@ export const site = defineSite({
 
 在对应站点的 `.dev.vars`（本地）或 Cloudflare Worker Secrets（线上）中注入以下变量：
 
-| 变量名 | 必填 | 说明 |
-| :--- | :---: | :--- |
-| `WAFFO_API_KEY` | 是 | Waffo 开放平台生成的 API Key / Access Token |
-| `WAFFO_WEBHOOK_SECRET` | 是 | Waffo 商户后台提供的 Webhook 验签密钥（支持 RSA 公钥 PEM 字符串或 HMAC Secret） |
-| `WAFFO_ENDPOINT` | 否 | API 基础地址，留空默认使用 `https://api.waffo.com` |
+| 变量名                 | 必填 | 说明                                                                            |
+| :--------------------- | :--: | :------------------------------------------------------------------------------ |
+| `WAFFO_API_KEY`        |  是  | Waffo 开放平台生成的 API Key / Access Token                                     |
+| `WAFFO_WEBHOOK_SECRET` |  是  | Waffo 商户后台提供的 Webhook 验签密钥（支持 RSA 公钥 PEM 字符串或 HMAC Secret） |
+| `WAFFO_ENDPOINT`       |  否  | API 基础地址，留空默认使用 `https://api.waffo.com`                              |
 
 ### 3.1 本地开发环境配置
 
@@ -92,6 +92,7 @@ pnpm wrangler secret put WAFFO_WEBHOOK_SECRET
 1. 登录 [Waffo 商户中心](https://waffo.com)。
 2. 进入 **Integration** / **Developers** -> **Webhooks** 设置。
 3. 添加 Webhook 接收地址（Notification URL）：
+
    ```
    https://<你的站点域名>/api/webhooks/waffo
    ```

@@ -13,25 +13,25 @@ shipwords is a monorepo for running one AI tool site per keyword. All sites shar
 
 ## 2. Stack
 
-| Concern          | Choice                                                               | Notes                                                                                                        |
-| ---------------- | -------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
-| Framework        | TanStack Start + React 19 + `@cloudflare/vite-plugin`                | One Worker per site                                                                                          |
-| UI               | Tailwind v4                                                          | Components live in each site; packages ship headless hooks only                                              |
-| Database         | D1 + Drizzle                                                         | D1 only; migrations use timestamp prefixes                                                                   |
-| Auth             | Better Auth: Google OAuth, One Tap, email one-time codes             | No passwords                                                                                                 |
-| Email            | Cloudflare Email Service (Worker binding)                            | No extra secret needed                                                                                       |
-| Bot defense      | reCAPTCHA v3 (score-based)                                           | Called only on guest generation and sign-up; low scores must sign in. Script loads on first tool interaction |
-| Rate limits      | Guest daily quota and site budget in D1 with conditional writes      | KV is eventually consistent and not suitable for exact counters                                              |
-| Device identity  | IP (IPv6 grouped by /64) plus a signed device cookie                 |                                                                                                              |
-| Disposable email | Built-in blocklist                                                   | Sign-up bonus requires a verified, non-disposable email                                                      |
+| Concern          | Choice                                                                  | Notes                                                                                                        |
+| ---------------- | ----------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| Framework        | TanStack Start + React 19 + `@cloudflare/vite-plugin`                   | One Worker per site                                                                                          |
+| UI               | Tailwind v4                                                             | Components live in each site; packages ship headless hooks only                                              |
+| Database         | D1 + Drizzle                                                            | D1 only; migrations use timestamp prefixes                                                                   |
+| Auth             | Better Auth: Google OAuth, One Tap, email one-time codes                | No passwords                                                                                                 |
+| Email            | Cloudflare Email Service (Worker binding)                               | No extra secret needed                                                                                       |
+| Bot defense      | reCAPTCHA v3 (score-based)                                              | Called only on guest generation and sign-up; low scores must sign in. Script loads on first tool interaction |
+| Rate limits      | Guest daily quota and site budget in D1 with conditional writes         | KV is eventually consistent and not suitable for exact counters                                              |
+| Device identity  | IP (IPv6 grouped by /64) plus a signed device cookie                    |                                                                                                              |
+| Disposable email | Built-in blocklist                                                      | Sign-up bonus requires a verified, non-disposable email                                                      |
 | Payments         | Stripe (default), PayPal, or Waffo (MoR), behind one provider interface | See section 5                                                                                                |
-| Job runtime      | Cloudflare Workflows                                                 | See section 6                                                                                                |
-| Storage          | R2 binding                                                           | Outputs served through the site                                                                              |
-| i18n             | Paraglide                                                            | Production builds ship English only                                                                          |
-| Analytics        | GA4, Rybbit (proxied through the site's `/stats/`), Clarity optional | Configured in `site.config.ts`                                                                               |
-| Errors           | Workers Logs                                                         |                                                                                                              |
-| Tests            | Vitest + `@cloudflare/vitest-plugin`                                 | Money tests run against a real D1 runtime in memory                                                          |
-| Tooling          | pnpm workspace, Biome, strict TypeScript                             | Biome handles both lint and format                                                                           |
+| Job runtime      | Cloudflare Workflows                                                    | See section 6                                                                                                |
+| Storage          | R2 binding                                                              | Outputs served through the site                                                                              |
+| i18n             | Paraglide                                                               | Production builds ship English only                                                                          |
+| Analytics        | GA4, Rybbit (proxied through the site's `/stats/`), Clarity optional    | Configured in `site.config.ts`                                                                               |
+| Errors           | Workers Logs                                                            |                                                                                                              |
+| Tests            | Vitest + `@cloudflare/vitest-plugin`                                    | Money tests run against a real D1 runtime in memory                                                          |
+| Tooling          | pnpm workspace, Biome, strict TypeScript                                | Biome handles both lint and format                                                                           |
 
 ## 3. Repository layout
 

@@ -84,5 +84,9 @@
   "common_account_status_disputed": "chargeback in review",
   "common_account_status_charged_back": "charged back",
   "common_account_no_orders": "No orders yet.",
-  "common_account_sign_out": "Sign out"
+  "common_account_sign_out": "Sign out",
+  "common_geo_doc_tag": "AI & Agent Docs",
+  "common_geo_doc_llms": "LLMS.TXT",
+  "common_geo_doc_desc": "See how ChatGPT, Claude, Perplexity, Gemini and Grok explain {name}.",
+  "common_geo_prompt": "What is {name} ({url})? Summarize its features, pricing, and how it works based on {url}/llms.txt."
 }
