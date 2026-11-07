@@ -68,6 +68,11 @@ export interface SiteConfig {
         provider: 'waffo';
         /** Optional custom API endpoint (defaults to https://api.waffo.com). */
         endpoint?: string;
+      }
+    | {
+        provider: 'anyway';
+        /** Optional custom API endpoint (defaults to https://merchant-api-prod.anyway.sh). */
+        endpoint?: string;
       };
   analytics?: {
     ga4?: string;

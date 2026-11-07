@@ -17,6 +17,10 @@ PAYPAL_WEBHOOK_ID=
 WAFFO_API_KEY=
 WAFFO_WEBHOOK_SECRET=
 WAFFO_ENDPOINT=https://api.waffo.com
+# For Anyway (anyway.sh) fill this group and leave others empty.
+ANYWAY_API_KEY=
+ANYWAY_WEBHOOK_SECRET=
+ANYWAY_ENDPOINT=https://merchant-api-prod.anyway.sh
 RECAPTCHA_SITE_KEY=
 RECAPTCHA_PROJECT_ID=
 RECAPTCHA_API_KEY=

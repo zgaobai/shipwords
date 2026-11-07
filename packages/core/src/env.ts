@@ -24,6 +24,9 @@ export interface CoreEnv {
   WAFFO_API_KEY?: string;
   WAFFO_WEBHOOK_SECRET?: string;
   WAFFO_ENDPOINT?: string;
+  ANYWAY_API_KEY?: string;
+  ANYWAY_WEBHOOK_SECRET?: string;
+  ANYWAY_ENDPOINT?: string;
 
   /** reCAPTCHA (Google Cloud): the client uses the site key; the server calls createAssessment with the project ID and API key. */
   RECAPTCHA_SITE_KEY: string;

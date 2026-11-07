@@ -1,5 +1,6 @@
 import { env as workerEnv } from 'cloudflare:workers';
 import { createAuth } from './auth/server';
+import { AnywayProvider } from './billing/anyway';
 import {
   activeSubscription,
   type BillingDeps,
@@ -52,6 +53,13 @@ function createProvider(site: SiteConfig, env: CoreEnv): PaymentProvider {
       apiKey: required(env, 'WAFFO_API_KEY'),
       webhookSecret: required(env, 'WAFFO_WEBHOOK_SECRET'),
       endpoint: site.billing.endpoint ?? env.WAFFO_ENDPOINT,
+    });
+  }
+  if (site.billing.provider === 'anyway') {
+    return new AnywayProvider({
+      apiKey: required(env, 'ANYWAY_API_KEY'),
+      webhookSecret: required(env, 'ANYWAY_WEBHOOK_SECRET'),
+      endpoint: site.billing.endpoint ?? env.ANYWAY_ENDPOINT,
     });
   }
   return new StripeProvider({
